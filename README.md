@@ -69,13 +69,29 @@ UXTesting Android Example Project
 	}
 	```
 
-7. Run your application.
+7. add following code in every Activity
+	```java
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UXTesting.onActivityResult(requestCode, resultCode, data);
+    }
 
-8. Shake to start your recording.
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults)  {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        UXTesting.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+	```
 
-9. Shake to end your recording. 
+8. Run your application.
 
-10. Go to [UXTesting Website](http://www.uxtesting.io/apps/) to view the results with your account.
+9. Shake to start your recording.
+
+10. Shake to end your recording.
+
+11. Go to [UXTesting Website](http://www.uxtesting.io/apps/) to view the results with your account.
 
 <br>
 
